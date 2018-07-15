@@ -1,4 +1,5 @@
 sample_image/
 .DS_Store
 pickle/
+*.ipynb_checkpoints/
 
