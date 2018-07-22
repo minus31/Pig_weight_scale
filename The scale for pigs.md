@@ -51,7 +51,7 @@
 
 - **Feature maps** 
 
-    Filter가 돌아다니며 추출한 숫자가 쌓여서 만든 또다른 이미지 한장을 Feature map이라고 합니다. Filter 하나가 하나의 Feature map을 만듭니다. 하나의 Filter를 통해 만들어진 하나의 Feature map은 이미지에서 어떠한 특징 하나가 강조되어 있는 그림이라고 할 수 있겠습니다. 여러개의 Filter가 만드는 여러 개의 Feature maps 들을 통해 이 이미지가 가지고 있는 중요한 몇가지의 특징 정보를 수집할 수 있습니다.  
+    Filter가 돌아다니며 추출한 숫자가 쌓여서 만든 또다른 이미지 한장을 Feature map이라고 합니다. Filter 하나가 하나의 Feature map을 만듭니다. 하나의 Filter를 통해 만들어진 하나의 Feature map은 이미지에서 어떠한 특징 하나가 강조되어 있는 그림이라고 할 수 있겠습니다. 여러개의 Filter가 만드는 여러 개의 Feature maps 들을 통해 이 이미지가 가지고 있는 중요한 몇 가지의 특징 정보를 수집할 수 있습니다.  
 
   <img src="https://cdn-images-1.medium.com/max/1600/1*45GSvnTvpHV0oiRr78dBiw@2x.png">
 
@@ -95,9 +95,13 @@ $\triangle$ Dense Block
 
 $\triangle$ Transition Layer 
 
-  DenseBlock으로 많아진 Feature map을 다시 더 줄이고, Feature map의 사이즈를 줄이는 단계입니다.  1x1 Convolution 을 통과 시켜, Feature map의 개수를 줄이고, Pooling으로 사이즈를 줄였습니다. 이 때는, 2x2의 Average Pooling을 사용했습니다. 
+**![img](https://lh3.googleusercontent.com/VLebqqLRDA0NMM28oCKRaZtg3SKQk65O1Euxt02gp6E14KgUcDtMd4AwG4SoZZmbSCbogehY4Rrkb2h1dy4pUQD1C6IbtAqE2xlcSGP8iwnyu_GjPmBD_61JnLmjvLmiGuqQARIu8gk)**
+
+  DenseBlock으로 많아진 Feature map의 개수를 다시 더 줄이고, Feature map의 사이즈를 줄이는 단계입니다.  1x1 Convolution 을 통과 시켜, Feature map의 개수를 줄이고, Pooling으로 사이즈를 줄였습니다. 이 때는, 2x2의 Average Pooling을 사용했습니다. (위 그림의  빨간색 블럭)
 
 $\triangle$ Global Average Pooling
+
+<img src="https://lh5.googleusercontent.com/73bUWNrILw3me8zwDjfBCFYAozjndOnrMS0pB8NMG43wyPdrDlZHG6-qaFNzduD6PpfgvBvN_CBBxXF77OqEhtabZb_5a-KNPvbShwurpO3Xc7tHCyKGSNTKv9c4_pzZqnB9co1KSy8" width="400" height=""></img>
 
   모델을 구성하며 두 개의 Dense Block  과 그 사이에 하나의 Transition Layer를 두어 이미지의 특징값을 효과적이며, 효율적으로 추출 했습니다. 이제는 실제로 무게를 예측하는 Regression layer(위에서는 Classification layer라고 표현 했던 부분 입니다. 이 모델의 목적은 실수값을 예측하는 Regression을 수행하는 문제이고 따라서 임의로 Regression Layer라고 표기 하겠습니다. )를 통과 시켜 실제 무게를 예측하는 부분으로 넘어갑니다. 보통의 경우에는 Feature maps 을 1차원의 벡터로 차원을 축소시켜 Dense layer의 각 노드의 인풋으로 넣어 줍니다.
 
