@@ -123,7 +123,7 @@ $\triangle$ Regression layers
 
 - **성과** 
 
-Test performance : 최소 MAE = 2.878
+Test performance : 최소 MAE = 2.3618
 
 
 
