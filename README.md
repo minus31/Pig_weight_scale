@@ -6,12 +6,12 @@
 
 ### * Contents 
 
-1. Preface 
-2. Work Explanation 
-3. Simulation
-4. reference 
+1. PROJECT INTRODUCTION
+2. INPUT AND PREPROCESSING
+3. MODELING
+4. OUTCOME
 
-
+--------
 
   몇 년 전부터,  Deeplearning 은 주목을 받았으며, 이를 이용한 많은 연구와 적용 사례가 쏟아 졌습니다. Deeplearning 구조는 [인공신경망](https://ko.wikipedia.org/wiki/%EC%9D%B8%EA%B3%B5%EC%8B%A0%EA%B2%BD%EB%A7%9D)(ANN, artificial neural networks)에 기반하여 설계된 개념으로 역사를 따지자면 최소 1980년 Kunihiko Fukushima에 의해 소개 된 Neocognitron 까지 거슬러 올라갑니다. 최근 까지 Deeplearning이 관심을 받을 수 없었던 이유는 막대한 연산량을 처리할 컴퓨터가 없었고, 설사 하더라도, 많은 데이터를 사용하지 않으면 성과가 좋지 않고, 학습이 잘 안되었고, 너무 많은 시간을 필요로 했었기 때문입니다. 이 이외에도,  많은 이유로 Neural Network는 외면 받아 왔으나, 이 후, 컴퓨터의 발전과 더불어, GPU를 이용한 복잡한 행렬 연산이 가능해졌고, 데이터가 폭발적으로 증가 했으며,  [제프리 힌튼](https://ko.wikipedia.org/wiki/%EC%A0%9C%ED%94%84%EB%A6%AC_%ED%9E%8C%ED%8A%BC)을 필두로 구조의 문제점들이 해결되면서 지금과 같은 많은 관심을 받게 되었습니다. 
 
