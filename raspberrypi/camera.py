@@ -8,7 +8,7 @@ import datetime
 import argparse
 import sys
 
-# sys.path.append('..')
+sys.path.append('..')
 from utils import visualization_utils as vis_util
 from utils import label_map_util
 from scaler import *

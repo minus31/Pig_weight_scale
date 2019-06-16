@@ -16,5 +16,7 @@ def scaler(img):
     print(weigh)
     return weigh
 
+
 if __name__ == "__main__":
-    
+    pass
+
