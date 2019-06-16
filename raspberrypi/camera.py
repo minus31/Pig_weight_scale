@@ -7,11 +7,11 @@ import tensorflow as tf
 import datetime
 import argparse
 import sys
+from scaler import *
 
 sys.path.append('..')
 from utils import visualization_utils as vis_util
 from utils import label_map_util
-from scaler import *
 
 # Set up camera constants
 IM_WIDTH = 640
