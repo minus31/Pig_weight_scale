@@ -1,6 +1,6 @@
-#!/usr/local/bin/zsh
+#!/bin/bash
 
-mkdir tensorflow1 $$ cd tensorflow1
+mkdir ~/tensorflow1 $$ cd ~/tensorflow1
 
 git clone --recurse-submodules https://github.com/tensorflow/models.git
 
