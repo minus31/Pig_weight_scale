@@ -103,8 +103,9 @@ for frame1 in camera.capture_continuous(rawCapture, format="bgr",use_video_port=
     if num > 0:
         new_frame = cv2.resize(frame_expanded[0], (550, 250))
         weigh = scaler(np.expand_dims(new_frame, axis=0))[0][0]
+        weigh = np.round(weigh, 2)
         now = datetime.datetime.now().strftime('%Y-%m-%d_%H:%M:%S')
-        camera.capture(RESULT_PATH + "{}-{0:.2f}.png".format(now, str(weigh)))
+        camera.capture(RESULT_PATH + "{}-{}.png".format(now, str(weigh)))
 
         print(weigh)
 
@@ -120,7 +121,7 @@ for frame1 in camera.capture_continuous(rawCapture, format="bgr",use_video_port=
     #     line_thickness=8,
     #     min_score_thresh=0.40)
 
-    cv2.putText(frame,"scale: {0:.2f}".format(weigh),(30,50),font,1,(255,255,0),2,cv2.LINE_AA)
+    cv2.putText(frame,"scale: {}".format(weigh),(30,50),font,1,(255,255,0),2,cv2.LINE_AA)
 
     # All the results have been drawn on the frame, so it's time to display it.
     cv2.imshow('Object detector', frame)
