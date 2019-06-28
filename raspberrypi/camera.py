@@ -99,7 +99,7 @@ for frame1 in camera.capture_continuous(rawCapture, format="bgr",use_video_port=
 
         weigh = scaler(frame_expanded)
         now = datetime.datetime.now().strftime('%Y-%m-%d_%H:%M:%S')
-        camera.capture("{}.png".format(now))
+        camera.capture("{}.png".format(now + str(weigh)))
 
         print(weigh)
 
