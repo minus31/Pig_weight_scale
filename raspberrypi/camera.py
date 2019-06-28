@@ -13,6 +13,10 @@ sys.path.append('..')
 from utils import visualization_utils as vis_util
 from utils import label_map_util
 
+RESULT_PATH = "/home/pi/Desktop/result/"
+if not os.path.exists(RESULT_PATH):
+    os.mkdir(RESULT_PATH)
+
 # Set up camera constants
 IM_WIDTH = 640
 IM_HEIGHT = 480
@@ -99,7 +103,7 @@ for frame1 in camera.capture_continuous(rawCapture, format="bgr",use_video_port=
 
         weigh = scaler(frame_expanded)
         now = datetime.datetime.now().strftime('%Y-%m-%d_%H:%M:%S')
-        camera.capture("{}.png".format(now + str(weigh)))
+        camera.capture(RESULT_PATH + "{}.png".format(now + str(weigh)))
 
         print(weigh)
 
