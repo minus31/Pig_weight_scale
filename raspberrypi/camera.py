@@ -102,7 +102,7 @@ for frame1 in camera.capture_continuous(rawCapture, format="bgr",use_video_port=
 
     if num > 0:
         new_frame = cv2.resize(frame_expanded[0], (550, 250))
-        weigh = scaler(np.expand_dims(new_frame, axis=0))
+        weigh = scaler(np.expand_dims(new_frame, axis=0))[0][0]
         now = datetime.datetime.now().strftime('%Y-%m-%d_%H:%M:%S')
         camera.capture(RESULT_PATH + "{}.png".format(now + str(weigh)))
 
