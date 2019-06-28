@@ -96,8 +96,9 @@ for frame1 in camera.capture_continuous(rawCapture, format="bgr",use_video_port=
     # (boxes, scores, classes, num) = sess.run(
     #     [detection_boxes, detection_scores, detection_classes, num_detections],
     #     feed_dict={image_tensor: frame_expanded})
-    num = sess.run([num_detections],
+    num = sess.run(num_detections,
             feed_dict={image_tensor: frame_expanded})
+    weigh = 0
 
     if num > 0:
 
@@ -108,6 +109,7 @@ for frame1 in camera.capture_continuous(rawCapture, format="bgr",use_video_port=
         print(weigh)
 
     # Draw the results of the detection (aka 'visulaize the results')
+
     # vis_util.visualize_boxes_and_labels_on_image_array(
     #     frame,
     #     np.squeeze(boxes),
@@ -121,7 +123,7 @@ for frame1 in camera.capture_continuous(rawCapture, format="bgr",use_video_port=
     cv2.putText(frame,"scale: {0:.2f}".format(weigh),(30,50),font,1,(255,255,0),2,cv2.LINE_AA)
 
     # All the results have been drawn on the frame, so it's time to display it.
-    #cv2.imshow('Object detector', frame)
+    cv2.imshow('Object detector', frame)
 
     t2 = cv2.getTickCount()
     time1 = (t2-t1)/freq
