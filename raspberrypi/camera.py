@@ -90,6 +90,7 @@ for frame1 in camera.capture_continuous(rawCapture, format="bgr",use_video_port=
     # i.e. a single-column array, where each item in the column has the pixel RGB value
     frame = np.copy(frame1.array)
     frame.setflags(write=1)
+    frame = cv2.resize(frame, (250, 550))
     frame_expanded = np.expand_dims(frame, axis=0)
 
     # Perform the actual detection by running the model with the image as input
