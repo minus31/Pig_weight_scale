@@ -21,5 +21,8 @@ cd ~/tensorflow1/models/research/object_detection
 
 wget https://raw.githubusercontent.com/EdjeElectronics/TensorFlow-Object-Detection-on-the-Raspberry-Pi/master/Object_detection_picamera.py
 
+sudo pip3 install scipy
+sudo pip3 install keras
+
 
 
